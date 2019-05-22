@@ -1,0 +1,37 @@
+replicaCount: 1
+
+image:
+  repository: fxinnovation/awsn
+  tag: 0.1.0
+  pullPolicy: IfNotPresent
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+  type: ClusterIP
+  port: 80
+
+resources:
+  limits:
+    cpu: 50m
+    memory: 128Mi
+  requests:
+    cpu: 10m
+    memory: 32Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
+
+configuration:
+  service_now:
+    instance_name: "example"
+    user_name: "example"
+    password: "changeme"
+  default_incident:
+    assignment_group: "exmaple" 
+    impact: 2 
+    urgency: 2
