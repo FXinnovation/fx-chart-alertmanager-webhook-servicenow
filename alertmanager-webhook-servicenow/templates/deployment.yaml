@@ -25,11 +25,20 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
           - name: AWSN_SERVICE_NOW_INSTANCE_NAME
-            value: "{{ .Values.configuration.service_now.instance_name }}"
+            valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credentials_servicenow }}"
+                  key: instance_name
           - name: AWSN_SERVICE_NOW_NAME
-            value: "{{ .Values.configuration.service_now.name }}"
+            valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credentials_servicenow }}"
+                  key: user_name
           - name: AWSN_SERVICE_NOW_PASSWORD
-            value: "{{ .Values.configuration.service_now.password }}"
+            valueFrom:
+                secretKeyRef:
+                  name: "{{ .Values.credentials_servicenow }}"
+                  key: password
           - name: AWSN_DEFAULT_INCIDENT_ASSIGNMENT_GROUP
             value: "{{ .Values.configuration.default_incident.assignment_group }}"
           - name: AWSN_DEFAULT_INCIDENT_IMPACT

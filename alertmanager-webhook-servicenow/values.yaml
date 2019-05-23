@@ -26,11 +26,8 @@ tolerations: []
 
 affinity: {}
 
+credentials_servicenow: 'name-of-the-secret'
 configuration:
-  service_now:
-    instance_name: "example"
-    user_name: "example"
-    password: "changeme"
   default_incident:
     assignment_group: "exmaple" 
     impact: 2 
