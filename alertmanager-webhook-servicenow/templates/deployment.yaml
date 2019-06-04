@@ -29,7 +29,7 @@ spec:
                 secretKeyRef:
                   name: "{{ .Values.credentials_servicenow }}"
                   key: instance_name
-          - name: AWSN_SERVICE_NOW_NAME
+          - name: AWSN_SERVICE_NOW_USER_NAME
             valueFrom:
                 secretKeyRef:
                   name: "{{ .Values.credentials_servicenow }}"
