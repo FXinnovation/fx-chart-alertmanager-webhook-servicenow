@@ -29,8 +29,8 @@ affinity: {}
 credentials_servicenow: 'name-of-the-secret'
 configuration:
   default_incident:
-    company: "exmaple"
+    company: "example"
     contact_type: "example"
-    assignment_group: "exmaple" 
+    assignment_group: "example" 
     impact: 2 
     urgency: 2
