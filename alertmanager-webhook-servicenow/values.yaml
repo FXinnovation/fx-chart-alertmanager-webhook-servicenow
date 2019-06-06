@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: fxinnovation/awsn
-  tag: 0.1.0
+  tag: 0.2.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -29,6 +29,8 @@ affinity: {}
 credentials_servicenow: 'name-of-the-secret'
 configuration:
   default_incident:
+    company: "exmaple"
+    contact_type: "example"
     assignment_group: "exmaple" 
     impact: 2 
     urgency: 2
