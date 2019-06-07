@@ -31,6 +31,6 @@ configuration:
   default_incident:
     company: "example"
     contact_type: "example"
-    assignment_group: "example" 
-    impact: 2 
+    assignment_group: "example"
+    impact: 2
     urgency: 2
