@@ -19,8 +19,15 @@ spec:
         app.kubernetes.io/name: {{ include "alertmanager-webhook-servicenow.name" . }}
         app.kubernetes.io/instance: {{ .Release.Name }}
     spec:
+      volumes:
+        - name: configuration-volume
+          configMap:
+            name: {{ include "alertmanager-webhook-servicenow.fullname" . }}
       containers:
         - name: {{ .Chart.Name }}
+          volumeMounts:
+            - name: configuration-volume
+              mountPath: /data
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
@@ -39,16 +46,6 @@ spec:
                 secretKeyRef:
                   name: "{{ .Values.credentials_servicenow }}"
                   key: password
-          - name: AWSN_DEFAULT_INCIDENT_COMPANY
-            value: "{{ .Values.configuration.default_incident.company }}"
-          - name: AWSN_DEFAULT_INCIDENT_CONTACT_TYPE
-            value: "{{ .Values.configuration.default_incident.contact_type }}"
-          - name: AWSN_DEFAULT_INCIDENT_ASSIGNMENT_GROUP
-            value: "{{ .Values.configuration.default_incident.assignment_group }}"
-          - name: AWSN_DEFAULT_INCIDENT_IMPACT
-            value: "{{ .Values.configuration.default_incident.impact }}"
-          - name: AWSN_DEFAULT_INCIDENT_URGENCY
-            value: "{{ .Values.configuration.default_incident.urgency }}"
           ports:
             - name: http
               containerPort: 9876

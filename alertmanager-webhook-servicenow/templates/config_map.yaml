@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "alertmanager-webhook-servicenow.fullname" . }}
+  labels:
+    app.kubernetes.io/name: {{ include "alertmanager-webhook-servicenow.name" . }}
+    helm.sh/chart: {{ include "alertmanager-webhook-servicenow.chart" . }}
+    app.kubernetes.io/instance: {{ .Release.Name }}
+    app.kubernetes.io/managed-by: {{ .Release.Service }}
+data:
+  configuration.yaml: |-
+{{ toYaml .Values.configuration | indent 4}}
