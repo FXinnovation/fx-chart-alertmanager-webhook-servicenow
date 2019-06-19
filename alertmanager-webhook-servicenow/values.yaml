@@ -27,10 +27,15 @@ tolerations: []
 affinity: {}
 
 credentials_servicenow: 'name-of-the-secret'
-configuration:
-  default_incident:
-    company: "example"
-    contact_type: "example"
-    assignment_group: "example"
-    impact: 2
-    urgency: 2
+configuration: {}
+  # default_incident:
+  #   company: "example"
+  #   contact_type: "example"
+  #   assignment_group: "example"
+  #   impact: 2
+  #   urgency: 2
+workflow: {}
+  # incident_group_key_field: "example_group_reference"
+  # no_update_states: []
+  #   - 1
+  #   - 2
