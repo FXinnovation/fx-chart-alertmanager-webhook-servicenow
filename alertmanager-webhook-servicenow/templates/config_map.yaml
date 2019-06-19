@@ -8,6 +8,6 @@ metadata:
     app.kubernetes.io/instance: {{ .Release.Name }}
     app.kubernetes.io/managed-by: {{ .Release.Service }}
 data:
-  configuration.yaml:
-    configuration: |-
+  configuration.yaml: |-
+    configuration:
 {{ toYaml .Values.configuration | indent 6}}
