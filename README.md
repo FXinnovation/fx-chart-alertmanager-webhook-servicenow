@@ -19,7 +19,7 @@
 | nodeSelector | `{}` | node selection constraint |
 | tolerations | `[]` | scheduling tolerations |
 | affinity | `{}` | node and inter-pod affinity and ainti-affinity |
-| configuration | see values.yaml | configuration |
+| configuration | see values.yaml | webhook configuration, except `service_now` section |
 | credentials_servicenow | `'name-of-the-seret'` | Name of the kubernetes secret with ServiceNow credentials |
 
 ### credentials_servicenow
