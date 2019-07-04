@@ -2,4 +2,4 @@ apiVersion: v1
 appVersion: "0.5.1"
 description: Manage incidents in ServiceNow from AlertManager
 name: alertmanager-webhook-servicenow
-version: 0.5.1
+version: 0.6.0
