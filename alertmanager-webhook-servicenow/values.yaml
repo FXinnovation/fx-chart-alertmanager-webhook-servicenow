@@ -2,7 +2,7 @@ replicaCount: 1
 
 image:
   repository: fxinnovation/awsn
-  tag: 1.2.1
+  tag: 1.3.0
   pullPolicy: IfNotPresent
 
 nameOverride: ""
@@ -28,15 +28,6 @@ affinity: {}
 
 credentials_servicenow: 'name-of-the-secret'
 configuration: {}
-  #default_incident:
-  #  assignment_group: "example"
-  #  category: "example"
-  #  cmdb_ci: "example"
-  #  company: "example"
-  #  contact_type: "example"
-  #  impact: 2
-  #  subcategory: "example"
-  #  urgency: 2
   #workflow:
   #  incident_group_key_field: "example_group_reference"
   #  no_update_states: []
@@ -44,3 +35,15 @@ configuration: {}
   #    - 2
   #  incident_update_fields:
   #    - "comments"
+  #default_incident:
+  #  assignment_group: "example"
+  #  category: "example"
+  #  cmdb_ci: "example"
+  #  comments: "example"
+  #  company: "example"
+  #  contact_type: "example"
+  #  description: "example"
+  #  impact: "example"
+  #  short_description: "example"
+  #  subcategory: "example"
+  #  urgency: "example"
