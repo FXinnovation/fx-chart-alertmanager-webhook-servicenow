@@ -6,7 +6,7 @@
 | --- | ------- | ----------- |
 | replicaCount | `1` | Number of replicas |
 | image.repository | `'fxinnovation/awsn'` | Repository of the docker image to be used |
-| image.tag | `'1.3.0'` | Tag of the docker image to be used |
+| image.tag | `'1.4.0'` | Tag of the docker image to be used |
 | image.pullPolicy | `'IfNotPresent'` | Pull policy of the image to be used |
 | nameOverride | `''` | overrides the name of the chart |
 | fullnameOverride | `''` | overrides the full name of the chart |
