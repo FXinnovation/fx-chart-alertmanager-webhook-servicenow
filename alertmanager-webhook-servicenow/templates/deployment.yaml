@@ -14,6 +14,8 @@ spec:
       app.kubernetes.io/name: {{ include "alertmanager-webhook-servicenow.name" . }}
       app.kubernetes.io/instance: {{ .Release.Name }}
   template:
+    annotations:
+      checksum/config: {{ toYaml .Values.configuration | sha256sum }}
     metadata:
       labels:
         app.kubernetes.io/name: {{ include "alertmanager-webhook-servicenow.name" . }}
